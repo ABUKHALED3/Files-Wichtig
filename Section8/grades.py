@@ -7,7 +7,7 @@
 # get from user the score
 score = float(input("Enter a score between 0 and 100: "))
 
-# if not 0<= socre and 100<= score
+# if not socre <=0  and score <= 100
 if not ( 0<= score <=100 ):
     # grade null
     grade = None
