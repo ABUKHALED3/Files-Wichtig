@@ -35,7 +35,7 @@ print('-'*20)
 # gretting the user
 print("Thanks for chossing KhaLed Pizza!🍕😊\nPlease enjoy your Time")
 
-# print the order 
+# print the order und {pizzas[id_pizza -1 ]} >>عشان نبدا نعد من الصفر
 print(f"While we get {num_pizza} pizza {pizzas[id_pizza - 1]} ready for you")
 
 print('-'*20)
