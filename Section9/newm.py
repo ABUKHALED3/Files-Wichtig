@@ -9,7 +9,7 @@ name = ['ahmed']
 cars_germany.append(name)
 print(cars_germany)
 
-# extend method .etend() add value into list or any itrable
+# extend method .extend() add value into list or any itrable
 
 nums = [1, 2.5]
 
