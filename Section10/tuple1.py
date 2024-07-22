@@ -28,7 +28,7 @@ print(a, b)
 
 print('-'*40)
 
-# Tupels wchtig in unpack 
+# Tuples wchtig in unpack 
 # تفريغ البيانات جو متفيرات بترتيب
 personal_details = ('Ahmed', 21, 1245765)
 
