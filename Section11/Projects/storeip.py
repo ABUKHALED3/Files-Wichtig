@@ -40,6 +40,9 @@ available_items = {
 # 3. view the total price of the shopping cart
 # 4. quit the program
 
+# intialize the shopping cart as dict
+cart = {}
+
 menu_message = """
 What would you like to do?
 1. View available itmes
@@ -76,6 +79,55 @@ while True:
             
             else:
                 print(f'{i+1}. {item} Price {available_items[item]['price']} EGP (out of stock)')
-                
-            
-    break
+
+        # get the item the user wants to buy
+        order_number = int(input('Enter the number of the item you want to buy: '))
+        # get the item name from the item number
+        # use method keys to return keys und save it as list
+
+        # item_name[item_number - 1]
+        order_name = list(available_items.keys())[order_number - 1]
+
+        # add the bought item to the cart 
+
+        # get the price of the bought item
+        order_price = available_items[order_name]['price']
+
+        # get the quantity of the bought item
+        # use get method to solve this
+        order_quantity = cart.get(order_name, {}).get('quantity', 0)
+        order_quantity += 1
+
+        # save order info
+        order_info = {
+            order_name: { 
+            'price': order_price,
+            'quantity': order_quantity
+            }
+        }
+
+        # add order info to the cart 
+        cart.update(order_info)
+
+        # confirm that the order has been added to the cart
+        print(f'{order_name} has been added to the cart successfully')
+
+
+
+
+
+
+
+
+
+
+
+
+    # if user choice enter 4
+    elif user_choice == '4':
+        print('Quitting the program...')
+        # break out of the loop
+        break
+
+
+print(cart)
