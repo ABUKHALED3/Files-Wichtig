@@ -31,7 +31,7 @@ available_items = {
 
     'Iphone 14 ':{
         'price': 33000,
-        'quantity': 0,
+        'quantity': 1,
     },
 }
 
@@ -87,6 +87,19 @@ while True:
 
         # item_name[item_number - 1]
         order_name = list(available_items.keys())[order_number - 1]
+
+        # check if item is not available (quantity 0 )
+        available_quantity = available_items[order_name]['quantity']
+        if available_quantity == 0:
+            print('Sorry the item is out of stock')
+
+            # key word continue 
+            # تجاهل الكود اللي تحت ده وعيد اللوب من الاول
+            # تخرج من اللوب break عكس الـ  
+            continue
+        # subtract 1 from the quantity
+        # نقص واحد من الكمية
+        available_items[order_name]['quantity'] -= 1
 
         # add the bought item to the cart 
 
