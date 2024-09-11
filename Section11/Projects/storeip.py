@@ -78,8 +78,9 @@ while True:
                 print(f'{i+1}. {item} Price {available_items[item]['price']} EGP')
             
             else:
-                print(f'{i+1}. {item} Price {available_items[item]['price']} EGP (out of stock)')
-
+                print(f'{i+1}. {item} Price {available_items[item]['price']} EGP (out of stock)')    
+    
+        
         # get the item the user wants to buy
         order_number = int(input('Enter the number of the item you want to buy: '))
         # get the item name from the item number
@@ -125,16 +126,34 @@ while True:
         # confirm that the order has been added to the cart
         print(f'{order_name} has been added to the cart successfully')
 
+    # if user chose 2 view cart
+    elif user_choice == '2':
+        if cart: 
+            print('\nCart')
+
+            # use for loop through cart dict
+            for item in cart:
+                # Value هات الـ 
+                item_price = cart[item]['price']
+                item_quantity = cart[item]['quantity']
+                print(f'{item}: {item_price:,} EGP x {item_quantity}')
+
+            # else if the cart empty >> False 
+        else: 
+            print('Your Cart is Empty!')
+
+        # عشان لما المستخدم يختار 2 نعرض لها اجمالي السعر    
+        # a list to store the total price each item in the cart
+        # 1 loop through cart
+        # 2 get the price of each item 
+        # 3 get the quantity of each item
+        # 4 الضرب
+        lst_total_item_price = [cart[item]['price'] * cart[item]['quantity'] for item in cart]
 
 
-
-
-
-
-
-
-
-
+        # sum all the items in the cart to get the total price
+        total_price_cart = sum(lst_total_item_price)
+        print(f'Total Price Of Cart {total_price_cart:,} EGP')
 
     # if user choice enter 4
     elif user_choice == '4':
@@ -142,5 +161,30 @@ while True:
         # break out of the loop
         break
 
+# if cart items print the cart
+if cart:
+    print('\nCart')
 
-print(cart)
+    # use for loop through cart dict
+    for item in cart:
+        # Value هات الـ 
+        item_price = cart[item]['price']
+        item_quantity = cart[item]['quantity']
+        print(f'{item}: {item_price:,} EGP x {item_quantity}')
+
+# else if the cart empty >> False 
+else:
+    print('Your Cart is Empty!')
+
+
+# a list to store the total price each item in the cart
+# 1 loop through cart
+# 2 get the price of each item 
+# 3 get the quantity of each item
+# 4 الضرب
+lst_total_item_price = [cart[item]['price'] * cart[item]['quantity'] for item in cart]
+
+
+# sum all the items in the cart to get the total price
+total_price_cart = sum(lst_total_item_price)
+print(f'Total Price Of Cart {total_price_cart:,} EGP')
