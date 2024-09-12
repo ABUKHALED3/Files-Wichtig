@@ -35,11 +35,6 @@ available_items = {
     },
 }
 
-# 1. view available itmes and buy what he/she (er/sie) wants
-# 2. view shopping cart which contains bought itmes
-# 3. view the total price of the shopping cart
-# 4. quit the program
-
 # intialize the shopping cart as dict
 cart = {}
 
@@ -59,6 +54,7 @@ while True:
 
     # get the user's choice
     user_choice = input('Enter your choice: ') 
+
     # 1. if the user chose to view available items
     if user_choice == '1':
         print('The Available itmes are: ')
@@ -82,7 +78,14 @@ while True:
     
         
         # get the item the user wants to buy
-        order_number = int(input('Enter the number of the item you want to buy: '))
+        order_number = int(input('Enter the number of the item you want to buy (Enter 0 to return the menu): '))
+        
+        # if user chose 0 
+        if order_number == 0:     
+            # أبدا اللوب تاني من الأول
+            continue
+        
+
         # get the item name from the item number
         # use method keys to return keys und save it as list
 
@@ -98,6 +101,7 @@ while True:
             # تجاهل الكود اللي تحت ده وعيد اللوب من الاول
             # تخرج من اللوب break عكس الـ  
             continue
+
         # subtract 1 from the quantity
         # نقص واحد من الكمية
         available_items[order_name]['quantity'] -= 1
@@ -109,8 +113,7 @@ while True:
 
         # get the quantity of the bought item
         # use get method to solve this
-        order_quantity = cart.get(order_name, {}).get('quantity', 0)
-        order_quantity += 1
+        order_quantity = cart.get(order_name, {}).get('quantity', 0) + 1
 
         # save order info
         order_info = {
@@ -155,12 +158,24 @@ while True:
         total_price_cart = sum(lst_total_item_price)
         print(f'Total Price Of Cart {total_price_cart:,} EGP')
 
-    # if user choice enter 4
+    # if user chose 3 
+    elif user_choice == '3':
+        lst_total_item_price = [cart[item]['price'] * cart[item]['quantity'] for item in cart]
+
+        # sum all the items in the cart to get the total price
+        total_price_cart = sum(lst_total_item_price)
+        print(f'Total Price Of Cart {total_price_cart:,} EGP')
+
+    # if user chose 4
     elif user_choice == '4':
-        print('Quitting the program...')
+        print('Thanks for shopping at Khaledit Store🥳')
         # break out of the loop
         break
-
+    
+    # if user chose an invalid option
+    else:
+        print('Please enter a number between 1 and 4.')
+        
 # if cart items print the cart
 if cart:
     print('\nCart')
