@@ -13,7 +13,7 @@ def add_task():
     my_task = input('Enter task: ').title()
     
     # define task status
-    task_info = {'Task':{my_task}, 'Completed':False}
+    task_info = {'Task': my_task, 'Completed':False}
 
     if task_info not in tasks: 
         tasks.append(task_info)
@@ -22,22 +22,30 @@ def add_task():
         print('This task in your list Tasks\n')
 
 def mark_task_complete():
-    task = input('Enter your taks completed: ').title()
-    if task in tasks:
-        completed_tasks.append(task)
-        tasks.remove(task)
-    else:
-        print(f'{task} is not in List Tasks\n')
+    # get the list of incomplete task
+    incomplete_tasks = [task for task in tasks  if task['Completed'] == False ]
+
+    # show them to the user
+    for i , task in enumerate(incomplete_tasks,1):
+        print(f'{i}- {task["Task"]}')
+    
+    # mark the task as completed
+    task_number = int(input('Enter your taks completed: '))
+    incomplete_tasks[task_number - 1]['Completed'] = True
+    
+    print(tasks)
+    
+    
 
 def view_tasks():
-    for index , task in enumerate(tasks):
-        print(f'{index+1} {t}')
+    for i , task in enumerate(tasks,1):
+        print(f'{i}- {task}')
         
 
 def view_completed_tasks():
     if completed_tasks:
-        for index , task in enumerate(completed_tasks):
-            print(f'{index+1} {task}\n🥳')
+        for i , task in enumerate(completed_tasks,1 ):
+            print(f'{i}- {task}\n🥳')
     else:
         print('Completed Tasks is Empty🤔')
 
