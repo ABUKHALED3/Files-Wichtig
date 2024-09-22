@@ -1,5 +1,11 @@
 # global variables
-tasks = []
+tasks = [
+    {'Task': 'Quran', 'Completed': True},
+    {'Task': 'Python Kurs lernen', 'Completed': False },
+    {'Task': 'ich höre und lese Deutschgeschichten', 'Completed': False},
+    {'Task': 'ich will einen SpielFußball mit meiner Famile sehen', 'Completed': False},
+    {'Task': 'Salah', 'Completed': True}
+]
 completed_tasks = []
 
 #هحط جوها الكود الأساسي اللي تحت ده بدل ما هو سايح كده علي بعضه ويلغبط  function  هعمل 
@@ -61,15 +67,35 @@ def mark_task_complete():
     for i , task in enumerate(incomplete_tasks,1):
         print(f'{i}- {task["Task"]}')
     
-    # mark the task as completed
-    task_number = int(input('Enter your taks completed: '))
-    incomplete_tasks[task_number - 1]['Completed'] = True
+    #نتيجة المستخدم  Errors بتشغل الكود ده  لو الكود ده رجع 
+    # Except هيشغل اللي تحت في 
+    try:
+        # mark the task as completed
+        task_number = int(input('Enter your taks number completed: '))
+        
+        if task_number < 1 or task_number > len(completed_tasks):
+            print('Invalid Task number')
+            return
+        
+        incomplete_tasks[task_number - 1]['Completed'] = True
 
-    print('Task marked completed🥳')
-    completed_tasks.append(incomplete_tasks[task_number - 1])
+        print('Task marked completed🥳')
+        completed_tasks.append(incomplete_tasks[task_number - 1])
+    
+    # لو المستخدم شغل البرنامج غلط 
+    #وينفذ اللي فيها  except هيخش جو الـ 
+    # ده في حالة أني المستخدم ادخل قيمة غلط او استخدام البرنامج غلط
+    # وكده احنا بنبعد عن اخطاء في البرنامج 
+    
+    # valueError لو المستخدم عمل 
+    # خش نفذ اللي جو هنا
+    except ValueError:
+        print('Invalid Input, Please Enter a number')
     
 
+
 def view_tasks(tasks_list):
+
     if not tasks_list:
         print('No Task to view 👎') 
         return
