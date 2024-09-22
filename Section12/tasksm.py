@@ -26,7 +26,7 @@ def main():
             mark_task_complete()
 
         elif choice == '3':
-            view_tasks()
+            view_tasks(tasks)
 
         elif choice == '4':
             view_completed_tasks()
@@ -69,12 +69,12 @@ def mark_task_complete():
     completed_tasks.append(incomplete_tasks[task_number - 1])
     
 
-def view_tasks():
-    if not tasks:
+def view_tasks(tasks_list):
+    if not tasks_list:
         print('No Task to view 👎') 
         return
 
-    for i , task in enumerate(tasks,1):
+    for i , task in enumerate(tasks_list,1):
         status = '✔️' if task['Completed'] else '❌'
 
         print(f'\n{i}- {task['Task']} {status}')
@@ -90,4 +90,12 @@ def view_completed_tasks():
         print('Completed Tasks is Empty🤔')
 
 
-main()
+#__main__ لما استخدم المتغير ده جو الملف ده واشغل الملف ده بيرجع 
+#لي الملف ده في ملف اخر  import لكن لما بعمل 
+#لي اسم الملف ده  retrun  بيعمل 
+# المثال ده في الملف
+# new_tasks
+print(__name__)
+
+if __name__ == '__main__':
+    main()
