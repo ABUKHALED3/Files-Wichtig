@@ -12,4 +12,8 @@ f = open('employess_data.txt')
 emps_data = f.readlines()
 
 for employee in emps_data:
-    print(employee)
+    emp = employee.strip().split('-')
+    salary = float(emp[-1]) * 2
+
+    print(f'{emp[0]} - {emp[1]}- {salary}')
+
