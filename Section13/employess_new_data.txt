@@ -1,4 +1,35 @@
-Willkommen bei Neue Lektion
-ich lerne pythonkurs
-Hallo
-
+Mohamed Ahmed  -  0102030405 - 24000.0
+Ahmed Ali  -  0115030406 - 30000.0
+Fatma Omar  -  0107030408 - 20000.0
+Khaled Samir  -  0108030409 - 28000.0
+Youssef Mahmoud  -  0119030410 - 34000.0
+Aya Ahmed  -  0130030411 - 26000.0
+Mona Tarek  -  0140030412 - 32000.0
+Amr Mohamed  -  0150030413 - 24000.0
+Laila Ali  -  0160030414 - 30000.0
+Omar Hassan  -  0170030415 - 36000.0
+Noha Yassin  -  0180030416 - 20000.0
+Amina Ibrahim  -  0190030417 - 28000.0
+Ali Samir  -  0200030418 - 34000.0
+Sarah Ahmed  -  0210030419 - 26000.0
+Tarek Hassan  -  0220030420 - 32000.0
+Hassan Ali  -  0230030421 - 24000.0
+Samar Mahmoud  -  0240030422 - 30000.0
+Eman Ali  -  0250030423 - 36000.0
+Amal Omar  -  0260030424 - 20000.0
+Youssef Samir  -  0270030425 - 28000.0
+Dalia Ahmed  -  0280030426 - 34000.0
+Hany Tarek  -  0290030427 - 26000.0
+Asmaa Hassan  -  0300030428 - 32000.0
+Khaled Ali  -  0310030429 - 24000.0
+Nada Yassin  -  0320030430 - 30000.0
+Sara Mahmoud  -  0330030431 - 36000.0
+Ramy Omar  -  0340030432 - 20000.0
+Hassan Samir  -  0350030433 - 28000.0
+Mariam Ahmed  -  0360030434 - 34000.0
+Omar Ali  -  0370030435 - 26000.0
+Mai Tarek  -  0380030436 - 32000.0
+Hanaa Hassan  -  0390030437 - 24000.0
+Ali Yassin  -  0400030438 - 30000.0
+Nour Mahmoud  -  0410030439 - 36000.0
+Yara Omar  -  0420030440 - 20000.0

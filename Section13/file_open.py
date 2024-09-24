@@ -20,3 +20,11 @@ for employee in emps_data:
 #عشان البرنامج ميهنجشي  Close  زي ما فتحت الملف لازم اعمله 
 f.close()
 
+with open('employess_new_data.txt','w') as f :
+    for employee in emps_data:
+        emp = employee.strip().split('-')
+        salary = float(emp[-1]) * 2
+
+        f.write(f'{emp[0]} - {emp[1]}- {salary}\n')
+
+
