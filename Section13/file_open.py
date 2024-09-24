@@ -17,3 +17,6 @@ for employee in emps_data:
 
     print(f'{emp[0]} - {emp[1]}- {salary}')
 
+#عشان البرنامج ميهنجشي  Close  زي ما فتحت الملف لازم اعمله 
+f.close()
+
