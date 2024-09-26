@@ -14,3 +14,6 @@ def read_book (file_name):
         # read the book 
         data = f.read()
         return data
+    
+
+# هسيب كده وهبقا احلها لما ارجع من الجيش تكون الدماغ رايقت شوية
