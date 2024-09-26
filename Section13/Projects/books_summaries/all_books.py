@@ -10,8 +10,7 @@ books =  {'Buch1': 'atomic_habits.txt',
 
 def read_book (file_name):
 
-    with open(file_name) as f:
+    with open(file_name,'w') as f:
         # read the book 
         data = f.read()
         return data
-    
