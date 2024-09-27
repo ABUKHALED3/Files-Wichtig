@@ -1,7 +1,7 @@
+# import re >> regex library
 import re
 
 # intro to Regex 
-
 
 txt = """Name: Hamada Codezilla
 
@@ -34,3 +34,29 @@ address is 456 Nile St, Giza, Egypt. He was born on February
 In his free time, Hamada enjoys playing Ping-Pong, reading tech
 
 blogs, and spending time with his family."""
+
+# method findall() return a list
+# takes zwei args 
+# Erste >>> الحاجة اللي بدور عليها
+# Zweite >>>  ا النص اللي بدور في
+
+find_all_hamada = re.findall('hamada',txt)
+print(find_all_hamada)
+
+print('-'*40)
+
+#search_hamada = re.search('Hamada',txt)
+#print(search_hamada)
+
+find_all_codezilla = re.findall('codezilla', txt.lower())
+print(f"{find_all_codezilla} \n")
+
+
+# sub method replace 
+# takes drei args
+# Erste>>> الحاجة اللي عايز ابدلها 
+# Zweite>>> الحاجة الجديد اللي احطها بدل الاوله
+# Drittel>>> النص اللي بعمل في الكلام ده
+
+new_txt = re.sub('codezilla', 'CODEZILLA', txt)
+print(new_txt)
