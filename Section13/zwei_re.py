@@ -54,4 +54,16 @@ email_match = re.findall(email_pattern, txt)
 email = email_match[0]
 print(email)
 
-# extract der Geburtstag 
+# extract der Geburtstag The date of birth
+dob_pattern = r'DOB: (\d{2})/(\d{2})/(\d{4})'
+dop_match = re.findall(dob_pattern, txt)
+dop = dop_match[0]
+
+# day Tag
+print(dop[0])
+
+# month Monat
+print(dop[1])
+
+# year Jahr
+print(dop[2])
