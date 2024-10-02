@@ -49,8 +49,17 @@ def update_salary(employees_lst):
     #return  float(salary [-1]) , salary[0] , salary[1]
 
 def sort_salary(update_employees_lst):
-    sorted_employess = sorted (update_employees_lst, key= lambda salary : (salary[-1], salary[0], salary[1]))
-    return sorted_employess
+    """ Sort the data by salary and then by the name 
+
+        parameters: 
+        update_employees_lst: list of lists that contains the data to be sorted
+
+        return:
+        sorted_employees: list of lists that contains the sorted data
+    
+    """
+    sorted_employees = sorted (update_employees_lst, key= lambda salary : (salary[-1], salary[0]))
+    return sorted_employees
 
 # Write employess data to a file
 def write_csv_file(file_name, new_data):
@@ -86,6 +95,8 @@ def main():
     print('Done (Fertig)')
 
 # الموبايل باظ و بحاول اصلحه بقالي 3 ساعات
+
+help(sort_salary)
 
 if __name__ == '__main__':
     main()
