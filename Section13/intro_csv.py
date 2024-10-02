@@ -37,7 +37,7 @@ def update_salary(employees_lst):
     return employees_lst
 
 # def function 
-def employess_salary (salary):
+#def employess_salary (salary):
     # رتب علي اساس
     # salary [-1] الاول
     #شبه بعضه salary في تطابق و الـ 
@@ -46,20 +46,50 @@ def employess_salary (salary):
     # في تطابق بردو 
 
     #salary[1] رتب علي اساس الـ 
-    return  float(salary [-1]) , salary[0] , salary[1]
+    #return  float(salary [-1]) , salary[0] , salary[1]
 
-# call to function read csv file und save it data in a file
-csv_data_lst = read_csv_file('employees_data.csv')
+def sort_salary(update_employees_lst):
+    sorted_employess = sorted (update_employees_lst, key= lambda salary : (salary[-1], salary[0], salary[1]))
+    return sorted_employess
 
-# call to function update salary
-updated_employees = update_salary(csv_data_lst)
+# Write employess data to a file
+def write_csv_file(file_name, new_data):
+    # open or create a new file --- mode>>> write und save it in variable new_file
+    with open(file_name, 'w', newline='') as new_file:
+        # use method writer 
+        # عشان اقدر اكتب في الملف ده وخزنتها في متغير
+        new_data_emps = csv.writer(new_file)
 
-sorted_employess = sorted (updated_employees, key= employess_salary)
+        # use method writerows () takes list
+        #new_data هكتب في الـ 
+        #sorted_employees اللي هكتبو هنا في 
+        new_data_emps.writerows(new_data)
 
-for emp in sorted_employess:
-    print(emp)
+
+def main():
+    # read the data
+    # call to function read csv file und save it data in a file
+    csv_data_lst = read_csv_file('employees_data.csv')
+        
+    #update the salary
+    # call to function update salary
+    updated_employees = update_salary(csv_data_lst)
+
+    # sort the salary
+    # call to function sort salary
+    sorted_employees = sort_salary(updated_employees)
+
+    # write the data into new file
+    # call to function write csv file
+    write_csv_file('new_emps_data', sorted_employees)
+
+    print('Done (Fertig)')
 
 # الموبايل باظ و بحاول اصلحه بقالي 3 ساعات
 
+if __name__ == '__main__':
+    main()
 
-# Write employess data to a file
+
+
+
