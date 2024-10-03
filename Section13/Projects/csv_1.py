@@ -1,3 +1,4 @@
+from collections import Counter
 
 # def function to read any files txt
 def read_txt_files(file_name): 
@@ -48,6 +49,7 @@ def count_letter_txt(data_file):
 # read the data file use function read_txt_files
 data_file = read_txt_files('books_summaries_2.txt')
 
+
 # count words in data use function count_words_txt
 count_words = count_words_txt(data_file)
 
@@ -60,11 +62,29 @@ Letters: {count_letters}"""
 
 print(messages_count)
 
+def sorted_words_repeated(data_file):
 
-# sort the words 
+    """ Get the data file or srings to sorted words by repeated  
 
-repeated_words = []
+        parameters: 
+        data_file>>> string data
 
-#sorted_words = sorted(data_file, key = lambda word: word[0])
+        return:
+        repeated_words >>> dict"""
 
-#print(sorted_words)
+    # list of repeated words
+    repeated_words = {}
+
+    # sort the words 
+    for word in data_file: 
+        if word.isalpha() and word not in repeated_words :
+            repeated_words[word]= repeated_words.get(word ,0)+ 1
+
+    sorted_words = sorted(repeated_words.items(), key =lambda count: count[1], reverse=True)
+
+    return sorted_words
+
+# call to function sorted words repeated to use it
+words_rep = sorted_words_repeated(data_file)
+
+print(words_rep)
